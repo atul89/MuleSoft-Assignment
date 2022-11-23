@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Students List</title>
+	</head>
+	<body>
+		<h3>Display Students Table</h3>
+		<a href="http://localhost:8080/student/register">Add Student</a>
+		<br/>
+		<span th:text="${message}"></span>
+		<table border="1" cellspacing="0" cellpadding="5">
+			<tr>
+				<th>ID</th>
+				<th> Student Name</th>
+				<th>Student Email Id</th>
+				<th>Student Contact No</th>
+				<th>Student Address</th>
+			</tr>
+			<tr th:each="stu:${student}">
+				<td th:text="${stu.studentId}"></td>
+				<td th:text="${stu.studentName}"></td>
+				<td th:text="${stu.studentEmail}"></td>
+				<td th:text="${stu.studentMobileNo}"></td>
+				<td th:text="${stu.studentAddress}"></td>
+				<td>
+					<a th:href="@{/student/edit(stuId=${stu.studentId})}">Edit</a>
+					|
+					<a th:href="@{/student/delete(stuId=${stu.studentId})}">Delete</a>
+				</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

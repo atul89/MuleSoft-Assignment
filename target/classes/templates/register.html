@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+</head>
+<body>
+	<h2>Register Here</h2>
+	<form action="savestudent" method="post">
+		<table>
+			<tr>
+				<td> Student Name :</td>
+				<td><input type="text" name="studentname" /></td>
+			</tr>
+			<tr>
+				<tr>
+				<td> Student Email Id :</td>
+				<td><input type="text" name="studentEmail" /></td>
+			</tr>
+			<tr>
+				<td>Student Contact No :</td>
+				<td><input type="text" name="studentMobileno" /></td>
+			</tr>
+			<tr>
+			 <td>Student Address :</td>
+				<td><input type="text" name="studentAddress" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="ADD STUDENT"
+/></td></br>
+</tr>
+</table>
+</form>
+ <a href="http://localhost:8080/student/show">Show Student Table</a>
+<label th:text="${message}"></label>
+</body>
+</html>
